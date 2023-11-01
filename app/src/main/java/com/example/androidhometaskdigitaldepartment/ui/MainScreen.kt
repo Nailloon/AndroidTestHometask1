@@ -17,7 +17,7 @@ fun MainScreen(){
         color = AppTheme.BgColors.greyBackground,
         modifier = Modifier.fillMaxSize()
     ){
-            Text("Hello")
+            DotaScreen()
     }
 }
 @Composable

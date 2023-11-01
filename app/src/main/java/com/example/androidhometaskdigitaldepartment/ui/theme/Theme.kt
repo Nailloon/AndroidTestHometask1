@@ -75,15 +75,14 @@ fun AndroidHometaskDigitalDepartmentTheme(
 }
 object AppTheme{
     object BgColors{val greyBackground = Dark_grey}
-    object ButtonColors{val yellowButton = Yellow}
+    object ButtonColors{val yellow = Yellow}
     object TextColors{val greyText = Bright_grey}
     object TextStyle{
-        val Bold_48
+        val Regular_12_20
             @Composable
             get() = TextStyle(
                 fontFamily = FontFamily,
-                fontWeight = FontWeight.Bold,
-                fontSize=48.sp,
+                fontSize=12.sp,
                 platformStyle = PlatformTextStyle(includeFontPadding=false),
                 lineHeightStyle = LineHeightStyle(
                     LineHeightStyle.Alignment.Proportional,
