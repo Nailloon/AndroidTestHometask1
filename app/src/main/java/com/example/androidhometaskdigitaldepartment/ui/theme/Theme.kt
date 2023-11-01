@@ -13,6 +13,11 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.text.PlatformTextStyle
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.LineHeightStyle
+import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
@@ -67,4 +72,23 @@ fun AndroidHometaskDigitalDepartmentTheme(
             typography = Typography,
             content = content
     )
+}
+object AppTheme{
+    object BgColors{val greyBackground = Dark_grey}
+    object ButtonColors{val yellowButton = Yellow}
+    object TextColors{val greyText = Bright_grey}
+    object TextStyle{
+        val Bold_48
+            @Composable
+            get() = TextStyle(
+                fontFamily = FontFamily,
+                fontWeight = FontWeight.Bold,
+                fontSize=48.sp,
+                platformStyle = PlatformTextStyle(includeFontPadding=false),
+                lineHeightStyle = LineHeightStyle(
+                    LineHeightStyle.Alignment.Proportional,
+                    LineHeightStyle.Trim.None
+                ),
+            )
+    }
 }
