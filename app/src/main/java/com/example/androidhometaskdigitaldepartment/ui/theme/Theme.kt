@@ -76,16 +76,20 @@ fun AndroidHometaskDigitalDepartmentTheme(
 }
 object AppTheme{
     object BgColors{val greyBackground = Dark_grey
-        val border = BorderGrey}
+        val border = BorderGrey
+    val divider = DarkDivider}
     object ButtonColors{val yellow = Yellow}
     object TextColors{val greyText = Bright_grey
     val whiteText = White
-    val downloadsText = VeryGrey}
+    val downloadsText = VeryGrey
+    val dateText = DateGrey
+    val commentText = commentGrey}
     object TextStyle{
         val Regular_12_19
             @Composable
             get() = TextStyle(
                 fontFamily = FontFamily,
+                fontWeight = FontWeight(400),
                 fontSize = 12.sp,
                 lineHeight = 19.sp,
                 platformStyle = PlatformTextStyle(includeFontPadding=false),
@@ -94,12 +98,26 @@ object AppTheme{
                     LineHeightStyle.Trim.None
                 ),
             )
+        val Regular_12_20
+            @Composable
+            get() = TextStyle(
+                fontFamily = FontFamily,
+                fontWeight = FontWeight(400),
+                fontSize = 12.sp,
+                lineHeight = 20.sp,
+                platformStyle = PlatformTextStyle(includeFontPadding=false),
+                lineHeightStyle = LineHeightStyle(
+                    LineHeightStyle.Alignment.Proportional,
+                    LineHeightStyle.Trim.None
+                ),
+                letterSpacing = 0.5.sp,
+            )
         val Bold_20
         @Composable
         get() = TextStyle(
             fontFamily = FontFamily,
             fontSize = 20.sp,
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight(700),
             platformStyle = PlatformTextStyle(includeFontPadding=false),
             lineHeightStyle = LineHeightStyle(
                 LineHeightStyle.Alignment.Proportional,
@@ -113,13 +131,13 @@ object AppTheme{
             fontFamily = FontFamily,
             fontSize = 20.sp,
             lineHeight = 26.sp,
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight(700),
             platformStyle = PlatformTextStyle(includeFontPadding=false),
             lineHeightStyle = LineHeightStyle(
                 LineHeightStyle.Alignment.Proportional,
                 LineHeightStyle.Trim.None
             ),
-            letterSpacing = 0.6.sp,
+            letterSpacing = 0.5.sp,
         )
         val Regular_12_05
         @Composable
@@ -133,5 +151,17 @@ object AppTheme{
         ),
             letterSpacing = 0.5.sp,
         )
+        val Regular_16
+            @Composable
+            get() = TextStyle(
+                fontFamily = FontFamily,
+                fontSize = 12.sp,
+                platformStyle = PlatformTextStyle(includeFontPadding=false),
+                lineHeightStyle = LineHeightStyle(
+                    LineHeightStyle.Alignment.Proportional,
+                    LineHeightStyle.Trim.None
+                ),
+                letterSpacing = 0.5.sp,
+            )
     }
 }

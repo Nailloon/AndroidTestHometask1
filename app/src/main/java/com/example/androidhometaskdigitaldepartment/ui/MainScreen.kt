@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.example.androidhometaskdigitaldepartment.R
 import com.example.androidhometaskdigitaldepartment.ui.theme.AppTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
@@ -17,7 +18,7 @@ fun MainScreen(){
         color = AppTheme.BgColors.greyBackground,
         modifier = Modifier.fillMaxSize()
     ){
-            DotaScreen()
+            DotaScreen(comments = commentList)
     }
 }
 @Composable

@@ -2,25 +2,30 @@ package com.example.androidhometaskdigitaldepartment.ui
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Button
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.androidhometaskdigitaldepartment.R
 import com.example.androidhometaskdigitaldepartment.ui.theme.AppTheme
 
 @Composable
-fun DotaScreen(){
+fun DotaScreen(comments: List<Comment>){
     val context = LocalContext.current
     val lazyListState = rememberLazyListState()
     LazyColumn(
@@ -55,8 +60,22 @@ fun DotaScreen(){
                 contentPadding = PaddingValues(start = 24.dp, end = 24.dp)
             )
         };
-        item{
-            RoundedInstallButton(modifier = Modifier.fillMaxWidth().padding(start = 24.dp, end = 24.dp)){ Toast.makeText(context, "CLICKED", Toast.LENGTH_LONG).show()}
+        itemsIndexed(comments) {index, item ->
+            CommentBlock(item,modifier=Modifier.padding(start = 24.dp, top = 16.dp, end=24.dp))
+            if (index <comments.lastIndex){
+                Divider(color = AppTheme.BgColors.divider, thickness = 1.dp, modifier = Modifier.padding(top = 12.dp, bottom = 10.dp))
+            }
         }
+        item {
+            Spacer(modifier = Modifier.height(40.dp))
+        };
+        item{
+            RoundedInstallButton(modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 24.dp, end = 24.dp)){ Toast.makeText(context, "CLICKED", Toast.LENGTH_LONG).show()}
+        };
+        item {
+            Spacer(modifier = Modifier.height(38.dp))
+        };
     }
 }
