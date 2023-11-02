@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -59,6 +60,12 @@ fun DotaScreen(comments: List<Comment>){
             ),
                 contentPadding = PaddingValues(start = 24.dp, end = 24.dp)
             )
+        };
+        item {
+            Text(text = "Review & Ratings", style = AppTheme.TextStyle.Regular_16, color = AppTheme.TextColors.greyText, modifier = Modifier.padding(start = 24.dp, end = 24.dp, top=20.dp, bottom = 12.dp))
+        };
+        item{
+            ReviewWithRating(float = 4.9F, modifier = Modifier.height(58.dp).padding(start = 24.dp))
         };
         itemsIndexed(comments) {index, item ->
             CommentBlock(item,modifier=Modifier.padding(start = 24.dp, top = 16.dp, end=24.dp))

@@ -50,7 +50,6 @@ fun DotaHeader(modifier:Modifier=Modifier ){
                 Row(modifier = Modifier.padding(top = 7.dp).height(14.dp)){
                     Stars(painterResource(id = R.drawable.img_stars), modifier = Modifier.size(76.dp,12.dp)){}
                     Text(text="70M",modifier = Modifier.padding(start=10.dp).height(14.dp), style = AppTheme.TextStyle.Regular_12_05, color = AppTheme.TextColors.downloadsText)
-
                 }
             }}}
 

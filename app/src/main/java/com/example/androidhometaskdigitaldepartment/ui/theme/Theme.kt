@@ -155,7 +155,33 @@ object AppTheme{
             @Composable
             get() = TextStyle(
                 fontFamily = FontFamily,
+                fontSize = 16.sp,
+                fontWeight = FontWeight(700),
+                platformStyle = PlatformTextStyle(includeFontPadding=false),
+                lineHeightStyle = LineHeightStyle(
+                    LineHeightStyle.Alignment.Proportional,
+                    LineHeightStyle.Trim.None
+                ),
+                letterSpacing = 0.5.sp,
+            )
+        val Regular_48
+            @Composable
+            get() = TextStyle(
+                fontFamily = FontFamily,
+                fontSize = 48.sp,
+                fontWeight = FontWeight(700),
+                platformStyle = PlatformTextStyle(includeFontPadding=false),
+                lineHeightStyle = LineHeightStyle(
+                    LineHeightStyle.Alignment.Proportional,
+                    LineHeightStyle.Trim.None
+                ),
+            )
+        val Regular_12_05_400
+            @Composable
+            get() = TextStyle(
+                fontFamily = FontFamily,
                 fontSize = 12.sp,
+                fontWeight = FontWeight(400),
                 platformStyle = PlatformTextStyle(includeFontPadding=false),
                 lineHeightStyle = LineHeightStyle(
                     LineHeightStyle.Alignment.Proportional,
