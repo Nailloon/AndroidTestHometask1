@@ -17,6 +17,7 @@ import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.LineHeightStyle
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 
@@ -74,20 +75,63 @@ fun AndroidHometaskDigitalDepartmentTheme(
     )
 }
 object AppTheme{
-    object BgColors{val greyBackground = Dark_grey}
+    object BgColors{val greyBackground = Dark_grey
+        val border = BorderGrey}
     object ButtonColors{val yellow = Yellow}
-    object TextColors{val greyText = Bright_grey}
+    object TextColors{val greyText = Bright_grey
+    val whiteText = White
+    val downloadsText = VeryGrey}
     object TextStyle{
-        val Regular_12_20
+        val Regular_12_19
             @Composable
             get() = TextStyle(
                 fontFamily = FontFamily,
-                fontSize=12.sp,
+                fontSize = 12.sp,
+                lineHeight = 19.sp,
                 platformStyle = PlatformTextStyle(includeFontPadding=false),
                 lineHeightStyle = LineHeightStyle(
                     LineHeightStyle.Alignment.Proportional,
                     LineHeightStyle.Trim.None
                 ),
             )
+        val Bold_20
+        @Composable
+        get() = TextStyle(
+            fontFamily = FontFamily,
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            platformStyle = PlatformTextStyle(includeFontPadding=false),
+            lineHeightStyle = LineHeightStyle(
+                LineHeightStyle.Alignment.Proportional,
+                LineHeightStyle.Trim.None
+            ),
+            letterSpacing = 0.6.sp,
+        )
+        val Bold_20_26
+        @Composable
+        get() = TextStyle(
+            fontFamily = FontFamily,
+            fontSize = 20.sp,
+            lineHeight = 26.sp,
+            fontWeight = FontWeight.Bold,
+            platformStyle = PlatformTextStyle(includeFontPadding=false),
+            lineHeightStyle = LineHeightStyle(
+                LineHeightStyle.Alignment.Proportional,
+                LineHeightStyle.Trim.None
+            ),
+            letterSpacing = 0.6.sp,
+        )
+        val Regular_12_05
+        @Composable
+        get() = TextStyle(
+            fontFamily = FontFamily,
+            fontSize = 12.sp,
+            platformStyle = PlatformTextStyle(includeFontPadding=false),
+            lineHeightStyle = LineHeightStyle(
+            LineHeightStyle.Alignment.Proportional,
+            LineHeightStyle.Trim.None
+        ),
+            letterSpacing = 0.5.sp,
+        )
     }
 }

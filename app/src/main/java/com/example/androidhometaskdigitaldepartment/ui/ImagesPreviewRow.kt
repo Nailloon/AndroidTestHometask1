@@ -42,7 +42,7 @@ fun ImageRow(
             Image(
                 painter = painterResource(id = imageRes),
                 contentDescription = null,
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.FillBounds,
                 modifier = Modifier
                     .padding(4.dp).width(200.dp).height(120.dp)
             )

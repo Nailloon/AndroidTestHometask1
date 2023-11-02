@@ -3,7 +3,9 @@ package com.example.androidhometaskdigitaldepartment.ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.hoverable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -27,15 +29,15 @@ fun RoundedInstallButton(
     Button(
         onClick = onClick,
         modifier = modifier
-            .hoverable(interactionSource),
+            .hoverable(interactionSource).width(327.dp)
+            .height(64.dp),
         shape = RoundedCornerShape(15),
         colors = ButtonDefaults.buttonColors(containerColor = AppTheme.ButtonColors.yellow),
         ) {
         Text(
             text = "Install",
             color = Color.Black,
-            //style = AppTheme.TextStyle.Regular_12_20,
-            fontWeight = FontWeight.Bold,
+            style = AppTheme.TextStyle.Bold_20,
         )
     }
 }

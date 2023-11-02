@@ -1,5 +1,6 @@
 package com.example.androidhometaskdigitaldepartment.ui
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,33 +28,35 @@ fun DotaScreen(){
         modifier = Modifier.fillMaxSize(),
     ){
         item{
-            DotaHeader(modifier = Modifier.fillMaxHeight(0.3f))
+            DotaHeader()
         };
         item{
             Text(
                 text = "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the \"Ancient\", whilst defending their own.",
-                style = AppTheme.TextStyle.Regular_12_20,
+                style = AppTheme.TextStyle.Regular_12_19,
                 color = AppTheme.TextColors.greyText,
                 modifier = Modifier
                     .padding(
                         start = 24.dp,
                         end = 24.dp,
-                        top = 8.dp,
-                        bottom = 8.dp,
+                        top = 20.dp,
+                        bottom = 12.dp,
                     )
                     .alpha(0.7f)
             )
         };
         item{
             ImageRow(imageList = listOf(
+                R.drawable.img_5,
+                R.drawable.img_6,
                 R.drawable.img_4,
                 R.drawable.img_3,
             ),
-                contentPadding = PaddingValues(start = 24.dp, end = 24.dp,top = 8.dp, bottom =8.dp)
+                contentPadding = PaddingValues(start = 24.dp, end = 24.dp)
             )
         };
         item{
-            RoundedInstallButton(modifier = Modifier.fillMaxWidth().padding(start = 24.dp, end = 24.dp)){}
+            RoundedInstallButton(modifier = Modifier.fillMaxWidth().padding(start = 24.dp, end = 24.dp)){ Toast.makeText(context, "CLICKED", Toast.LENGTH_LONG).show()}
         }
     }
 }
