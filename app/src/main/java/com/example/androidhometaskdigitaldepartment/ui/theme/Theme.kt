@@ -77,13 +77,16 @@ fun AndroidHometaskDigitalDepartmentTheme(
 object AppTheme{
     object BgColors{val greyBackground = Dark_grey
         val border = BorderGrey
-    val divider = DarkDivider}
+    val divider = DarkDivider
+        val chipBackgroundColor = backChip
+    }
     object ButtonColors{val yellow = Yellow}
     object TextColors{val greyText = Bright_grey
     val whiteText = White
     val downloadsText = VeryGrey
     val dateText = DateGrey
-    val commentText = commentGrey}
+    val commentText = commentGrey
+        val chipTextColor = blueChip}
     object TextStyle{
         val Regular_12_19
             @Composable
@@ -188,6 +191,14 @@ object AppTheme{
                     LineHeightStyle.Trim.None
                 ),
                 letterSpacing = 0.5.sp,
+            )
+        val Regular_10_500
+            @Composable
+            get() = TextStyle(
+                fontFamily = FontFamily,
+                fontSize = 10.sp,
+                fontWeight = FontWeight(500),
+                platformStyle = PlatformTextStyle(includeFontPadding=false),
             )
     }
 }
