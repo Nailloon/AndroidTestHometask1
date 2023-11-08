@@ -18,19 +18,29 @@ import com.example.androidhometaskdigitaldepartment.R
 import com.example.androidhometaskdigitaldepartment.ui.theme.AppTheme
 
 @Composable
-fun ReviewWithRating(float: Float,modifier: Modifier){
+fun ReviewWithRating(float: Float, modifier: Modifier) {
     Row(modifier = modifier) {
-        Text(text = float.toString(), style= AppTheme.TextStyle.Regular_48, color = AppTheme.TextColors.whiteText)
-        Column(modifier = Modifier.padding(top=13.dp, start = 16.dp)){
-            StarRating(rating = float, modifier = Modifier.height(16.dp))
-            Text(text = "70M Reviews", style = AppTheme.TextStyle.Regular_12_05_400, color = AppTheme.TextColors.greyText, modifier = Modifier.padding(top = 8.dp, bottom = 7.dp))
+        Text(
+            text = float.toString(),
+            style = AppTheme.TextStyle.Regular_48,
+            color = AppTheme.TextColors.whiteText
+        )
+        Column(modifier = Modifier.padding(top = 13.dp, start = 16.dp)) {
+            StarRating(rate = float, modifier = Modifier.height(16.dp))
+            Text(
+                text = "70M Reviews",
+                style = AppTheme.TextStyle.Regular_12_05_400,
+                color = AppTheme.TextColors.greyText,
+                modifier = Modifier.padding(top = 8.dp, bottom = 7.dp)
+            )
         }
     }
 }
+
 @Composable
-fun StarRating(rating: Float, modifier: Modifier) {
-    val fullStarCount = rating.toInt()
-    val halfStarCount = if (rating - fullStarCount >= 0.5f) 1 else 0
+fun StarRating(rate: Float, modifier: Modifier) {
+    val fullStarCount = rate.toInt()
+    val halfStarCount = if (rate - fullStarCount >= 0.5f) 1 else 0
     val emptyStarCount = 5 - fullStarCount - halfStarCount
 
     Row {
@@ -43,7 +53,7 @@ fun StarRating(rating: Float, modifier: Modifier) {
             )
         }
         if (halfStarCount > 0) {
-            HalfFilledIcon(modifier=modifier)
+            HalfFilledIcon(modifier = modifier)
         }
         repeat(emptyStarCount) {
             UnFilledIcon(modifier = modifier)
@@ -54,11 +64,12 @@ fun StarRating(rating: Float, modifier: Modifier) {
 @Composable
 fun HalfFilledIcon(modifier: Modifier) {
     Image(
-        painter = painterResource(id = R.drawable.baseline_star_half_24 ),
+        painter = painterResource(id = R.drawable.baseline_star_half_24),
         contentDescription = null,
         modifier = modifier
     )
 }
+
 @Composable
 fun UnFilledIcon(modifier: Modifier) {
     Image(

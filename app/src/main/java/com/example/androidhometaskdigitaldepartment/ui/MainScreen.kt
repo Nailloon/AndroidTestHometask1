@@ -10,20 +10,21 @@ import com.example.androidhometaskdigitaldepartment.ui.theme.AppTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
-fun MainScreen(){
+fun MainScreen() {
     ApplySystemBarColors()
     Surface(
         color = AppTheme.BgColors.greyBackground,
         modifier = Modifier.fillMaxSize()
-    ){
-            DotaScreen(comments = commentList)
+    ) {
+        DotaScreen(comments = commentList)
     }
 }
+
 @Composable
-private fun ApplySystemBarColors(){
+private fun ApplySystemBarColors() {
     val systemUiController = rememberSystemUiController()
-    SideEffect{
-        systemUiController.setStatusBarColor(color= Color.Transparent)
-        systemUiController.setNavigationBarColor(color= Color.Transparent)
+    SideEffect {
+        systemUiController.setStatusBarColor(color = Color.Transparent)
+        systemUiController.setNavigationBarColor(color = Color.Transparent)
     }
 }

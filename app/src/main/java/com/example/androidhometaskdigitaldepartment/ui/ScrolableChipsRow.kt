@@ -20,15 +20,15 @@ import androidx.compose.ui.unit.dp
 import com.example.androidhometaskdigitaldepartment.ui.theme.AppTheme
 
 @Composable
-fun ScrolableChipsRow(modifier: Modifier, contentPadding: PaddingValues, chips: List<ContentChip>){
+fun ScrolableChipsRow(modifier: Modifier, contentPadding: PaddingValues, chips: List<ContentChip>) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(10.dp),
         contentPadding = contentPadding,
         modifier = modifier,
-    ){
-        items(chips){item->
+    ) {
+        items(chips) { item ->
             Chip(
-               text = item,
+                text = item,
                 backgroundColor = AppTheme.BgColors.chipBackgroundColor,
             )
         }
@@ -36,16 +36,25 @@ fun ScrolableChipsRow(modifier: Modifier, contentPadding: PaddingValues, chips: 
 }
 
 @Composable
-fun Chip(text: ContentChip, backgroundColor: Color){
+fun Chip(text: ContentChip, backgroundColor: Color) {
     Box(
-        modifier = Modifier.height(22.dp).background(backgroundColor).clip(RoundedCornerShape(percent = 100)),
+        modifier = Modifier
+            .height(22.dp)
+            .clip(RoundedCornerShape(10.dp))
+            .background(backgroundColor),
         contentAlignment = Alignment.Center
     ) {
-        Text(text = text.textOfChip, style = AppTheme.TextStyle.Regular_10_500, color = AppTheme.TextColors.chipTextColor, modifier = Modifier.padding(horizontal = 10.dp))
+        Text(
+            text = text.textOfChip,
+            style = AppTheme.TextStyle.Regular_10_500,
+            color = AppTheme.TextColors.chipTextColor,
+            modifier = Modifier.padding(horizontal = 10.dp)
+        )
     }
 }
+
 @Preview
 @Composable
-fun PreviewScrolableChipsRow(){
+fun PreviewScrolableChipsRow() {
     ScrolableChipsRow(chips = chipList, contentPadding = PaddingValues(), modifier = Modifier)
 }

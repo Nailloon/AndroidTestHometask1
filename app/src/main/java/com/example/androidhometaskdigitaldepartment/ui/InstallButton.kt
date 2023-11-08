@@ -24,11 +24,12 @@ fun RoundedInstallButton(
     Button(
         onClick = onClick,
         modifier = modifier
-            .hoverable(interactionSource).width(327.dp)
+            .hoverable(interactionSource)
+            .width(327.dp)
             .height(64.dp),
         shape = RoundedCornerShape(15),
         colors = ButtonDefaults.buttonColors(containerColor = AppTheme.ButtonColors.yellow),
-        ) {
+    ) {
         Text(
             text = "Install",
             color = Color.Black,

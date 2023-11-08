@@ -20,21 +20,39 @@ import com.example.androidhometaskdigitaldepartment.ui.theme.AppTheme
 fun CommentBlock(
     comment: Comment,
     modifier: Modifier,
-){
-    Column(modifier = modifier){
-        Row(){
-            Box(modifier = Modifier
-                .clip(CircleShape)
-                .size(36.dp)){
-                Image(painter = painterResource(id = comment.imageRes),
-                contentDescription = null,
-                contentScale = ContentScale.Crop)
+) {
+    Column(modifier = modifier) {
+        Row() {
+            Box(
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .size(36.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = comment.imageRes),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop
+                )
             }
-            Column(modifier = Modifier.padding(start = 16.dp)){
-                Text(text = comment.username, style= AppTheme.TextStyle.Regular_16, color=AppTheme.TextColors.whiteText);
-                Text(text = comment.date,style= AppTheme.TextStyle.Regular_12_05, color=AppTheme.TextColors.dateText, modifier = Modifier.padding(top = 7.dp))
+            Column(modifier = Modifier.padding(start = 16.dp)) {
+                Text(
+                    text = comment.username,
+                    style = AppTheme.TextStyle.Regular_16,
+                    color = AppTheme.TextColors.whiteText
+                )
+                Text(
+                    text = comment.date,
+                    style = AppTheme.TextStyle.Regular_12_05,
+                    color = AppTheme.TextColors.dateText,
+                    modifier = Modifier.padding(top = 7.dp)
+                )
             }
         }
     }
-    Text(comment.text, modifier = Modifier.padding(start = 24.dp, end = 24.dp), style= AppTheme.TextStyle.Regular_12_20, color = AppTheme.TextColors.commentText)
+    Text(
+        comment.text,
+        modifier = Modifier.padding(start = 24.dp, end = 24.dp),
+        style = AppTheme.TextStyle.Regular_12_20,
+        color = AppTheme.TextColors.commentText
+    )
 }
